@@ -11,17 +11,24 @@ var losses_display = document.getElementById("losses");
 var guesses_left_display = document.getElementById("guesses_left");
 var guesses_display = document.getElementById("guesses");
 
-wins_display.textContent = wins;
-losses_display.textContent = losses;
-guesses_left_display.textContent = guesses_left;
-guesses_display.textContent = guesses;
+function update_display()
+{
+    wins_display.textContent = wins;
+    losses_display.textContent = losses;
+    guesses_left_display.textContent = guesses_left;
+    guesses_display.textContent = guesses;
+}
+
+update_display();
 
 // JavaScript function onkeyup event
-// document.onkeyup = function(event) 
-// {
-//   //userText.textContent = event.key;
-//   user_play = event.key;
-//   userText.textContent = user_play;
+document.onkeyup = function(event) 
+{
+  user_play = event.key;
+  guesses = guesses + ', ' + user_play;
+
+  update_display();
+
 //   if ((event.key === 'r') || (event.key === 'p') || (event.key === 's')) 
 //   {
 //     comp_play = computerChoices[Math.floor(Math.random() * computerChoices.length)];
@@ -38,8 +45,6 @@ guesses_display.textContent = guesses;
 //     else 
 //       losses++;
     
-//     winsText.textContent = wins;
-//     lossesText.textContent = losses;
-//     tiesText.textContent = ties;
-//   }
-// }
+   
+ 
+}
