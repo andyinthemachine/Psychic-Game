@@ -25,7 +25,10 @@ update_display();
 document.onkeyup = function(event) 
 {
   user_play = event.key;
-  guesses = guesses + ', ' + user_play;
+  guesses = guesses  + user_play + ', ';
+  
+  comp_play = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
 
   update_display();
 
