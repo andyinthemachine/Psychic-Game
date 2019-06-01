@@ -26,7 +26,6 @@ function reset_game(num_guesses)
   guesses = "";
 }
 
-
 update_display();  
 
 // JavaScript function onkeyup event
@@ -45,7 +44,7 @@ document.onkeyup = function(event)
     wins++;
     reset_game(9);
   }
-  else if (guesses_left-- <= 1)
+  else if (--guesses_left === 0)    // a loss
   {
     losses++;
     reset_game(9);
